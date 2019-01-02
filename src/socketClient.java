@@ -13,10 +13,11 @@ public class socketClient {
             PrintWriter out =
                     new PrintWriter(s.getOutputStream(), true);
             out.println(message);
-            String msg = JOptionPane.showInputDialog(
-                    "Message sent. Anything else?");
-            if (msg == "no")
+            if(JOptionPane.showConfirmDialog(null,
+                    "One more message?", "One question...", JOptionPane.YES_NO_OPTION) == 1) {
                 System.exit(0);
+                break;
+            }
         }
     }
 }
